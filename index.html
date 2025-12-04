@@ -1,85 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Website — Demo</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* --- Custom styles (kept small) --- */
+    :root{--brand:#0d6efd;--soft:#f8f9fa}
+    body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    .hero{background: linear-gradient(120deg,#e9f2ff 0%, #ffffff 60%);padding:80px 0}
+    .feature-icon{width:56px;height:56px;border-radius:12px;background:rgba(13,110,253,0.08);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--brand)}
+    .card-hover:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(13,110,253,0.08);transition:all .25s}
+    footer{background:#0b1220;color:#fff}
+    @media (max-width:576px){.hero{padding:56px 0}}
+  </style>
 </head>
-<body style="margin:0; font-family:Arial, sans-serif; background:#f4f4f4;">
+<body>
 
-    <!-- NAVBAR -->
-    <div style="background:#222; padding:15px; position:fixed; top:0; width:100%; z-index:1000;">
-        <a href="#home" style="color:white; margin-right:20px; text-decoration:none;">Home</a>
-        <a href="#about" style="color:white; margin-right:20px; text-decoration:none;">About</a>
-        <a href="#projects" style="color:white; margin-right:20px; text-decoration:none;">Projects</a>
-        <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">MySite</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary ms-lg-3">Get in touch</a>
     </div>
+  </div>
+</nav>
 
-    <!-- HOME -->
-    <section id="home" style="padding:120px 20px 80px; text-align:center;">
-        <h1 style="font-size:48px; margin-bottom:10px;">Welcome to My Portfolio</h1>
-        <p style="font-size:20px; color:#555;">I build modern and clean digital experiences.</p>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" style="padding:60px 20px; max-width:850px; margin:auto;">
-        <h2 style="font-size:32px;">About Me</h2>
-        <p style="line-height:1.7; font-size:18px; color:#333;">
-            Hi! I'm a creator passionate about web design and interactive experiences.
-            I love turning ideas into clean, functional, and visually appealing websites.
+<!-- HERO -->
+<header id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">Simple, Clean & Responsive Website</h1>
+        <p class="lead text-muted">A tidy starter template built with HTML, CSS and Bootstrap. Easy to customize — perfect for portfolios, small businesses or demos.</p>
+        <p>
+          <a href="#features" class="btn btn-primary btn-lg me-2">Explore features</a>
+          <a href="#gallery" class="btn btn-outline-secondary btn-lg">See gallery</a>
         </p>
-
-        <h3 style="margin-top:20px;">Skills</h3>
-        <ul style="font-size:18px;">
-            <li>HTML, CSS, JavaScript</li>
-            <li>Responsive Web Design</li>
-            <li>UI/UX Layout</li>
-        </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" style="padding:60px 20px; max-width:900px; margin:auto;">
-        <h2 style="font-size:32px;">Projects</h2>
-
-        <div style="background:white; padding:20px; margin:20px 0; border-radius:6px;">
-            <h3>Project One</h3>
-            <p>A responsive website with modern UI elements.</p>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="card shadow-sm">
+          <img src="https://picsum.photos/800/500" alt="Demo image" class="img-fluid rounded">
         </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-        <div style="background:white; padding:20px; margin:20px 0; border-radius:6px;">
-            <h3>Project Two</h3>
-            <p>A JavaScript interactive app built for user engagement.</p>
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="h3">Features</h2>
+      <p class="text-muted">What this template includes</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded card-hover h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <h5 class="mb-1">Fast & Lightweight</h5>
+              <p class="text-muted mb-0">Minimal dependencies and optimized structure for quick loading.</p>
+            </div>
+          </div>
         </div>
-
-        <div style="background:white; padding:20px; margin:20px 0; border-radius:6px;">
-            <h3>Project Three</h3>
-            <p>A clean and minimalistic landing page design.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded card-hover h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="feature-icon">🖌️</div>
+            <div>
+              <h5 class="mb-1">Easy to Customize</h5>
+              <p class="text-muted mb-0">Clear HTML structure and simple CSS for fast edits.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded card-hover h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="feature-icon">📱</div>
+            <div>
+              <h5 class="mb-1">Responsive</h5>
+              <p class="text-muted mb-0">Designed to look great on phones, tablets and desktops.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTACT -->
-    <section id="contact" style="padding:60px 20px; max-width:600px; margin:auto;">
-        <h2 style="font-size:32px;">Contact Me</h2>
+<!-- GALLERY -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="h3">Gallery</h2>
+      <p class="text-muted">A few example images</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><img src="https://picsum.photos/400/300?random=1" class="img-fluid rounded" alt=""></div>
+      <div class="col-6 col-md-3"><img src="https://picsum.photos/400/300?random=2" class="img-fluid rounded" alt=""></div>
+      <div class="col-6 col-md-3"><img src="https://picsum.photos/400/300?random=3" class="img-fluid rounded" alt=""></div>
+      <div class="col-6 col-md-3"><img src="https://picsum.photos/400/300?random=4" class="img-fluid rounded" alt=""></div>
+    </div>
+  </div>
+</section>
 
-        <form style="display:flex; flex-direction:column;">
-            <label style="margin-bottom:5px;">Name:</label>
-            <input type="text" style="padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
-
-            <label style="margin-bottom:5px;">Email:</label>
-            <input type="email" style="padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;">
-
-            <label style="margin-bottom:5px;">Message:</label>
-            <textarea style="padding:10px; height:120px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px;"></textarea>
-
-            <button type="submit" style="padding:12px; background:#222; color:white; border:none; border-radius:4px; cursor:pointer;">
-                Send
-            </button>
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h3>Contact Us</h3>
+        <p class="text-muted">Send a message and we'll reply as soon as possible.</p>
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
         </form>
-    </section>
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <div class="p-4 rounded" style="background:linear-gradient(180deg,#ffffff,#f1f7ff)">
+          <h5>Our Office</h5>
+          <p class="mb-1 text-muted">123 Demo Street<br>City, Country</p>
+          <p class="mb-0 text-muted">Phone: +1 234 567 890<br>Email: hello@mysite.com</p>
+          <div class="mt-3">
+            <iframe style="width:100%;height:220px;border:0;border-radius:8px" src="https://maps.google.com/maps?q=New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer style="text-align:center; padding:20px; background:#222; color:white; margin-top:40px;">
-        © 2025 My Portfolio — All Rights Reserved
-    </footer>
+<!-- FOOTER -->
+<footer class="py-4">
+  <div class="container text-center">
+    <p class="mb-1 small text-muted">© <span id="year"></span> MySite. All rights reserved.</p>
+    <p class="mb-0 small text-muted">Built with ❤️ using Bootstrap</p>
+  </div>
+</footer>
 
+<!-- Bootstrap JS and small custom script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Set copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simple client-side form validation
+  (function(){
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e){
+      if(!form.checkValidity()){
+        e.preventDefault();
+        e.stopPropagation();
+      } else {
+        e.preventDefault();
+        // Demo behavior: show an alert instead of sending to server
+        alert('Thanks! Message would be sent in a real site.');
+        form.reset();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  })();
+</script>
 </body>
 </html>
